@@ -76,6 +76,18 @@
 		<description></description>
 		<servlet-class>edu.upeu.ventas.web.alumno.AlumnoEliminarServlet</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>DocenteEliminarServlet</servlet-name>
+		<display-name>DocenteEliminarServlet</display-name>
+		<description></description>
+		<servlet-class>edu.upeu.ventas.web.docente.DocenteEliminarServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>CursoEliminarServelt</servlet-name>
+		<display-name>CursoEliminarServelt</display-name>
+		<description></description>
+		<servlet-class>edu.upeu.ventas.web.curso.CursoEliminarServelt</servlet-class>
+	</servlet>
 	<servlet-mapping>
 		<servlet-name>HomeServlet</servlet-name>
 		<url-pattern>/home</url-pattern>
@@ -123,5 +135,13 @@
 	<servlet-mapping>
 		<servlet-name>AlumnoEliminarServlet</servlet-name>
 		<url-pattern>/alumnos/eliminar</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>DocenteEliminarServlet</servlet-name>
+		<url-pattern>/docentes/eliminar</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>CursoEliminarServelt</servlet-name>
+		<url-pattern>/cursos/eliminar</url-pattern>
 	</servlet-mapping>
 </web-app>

@@ -13,5 +13,7 @@ public interface DocenteDAO {
 	void insertar(Docente d);
 
 	void actualizar(Docente d);
+	
+	void eliminar(String id);
 
 }

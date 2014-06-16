@@ -69,4 +69,11 @@ public class CursoServiceImpl implements CursoService {
 
 		return a;
 	}
+	
+	public void eliminar(String id){
+			
+			cursoDAO.eliminar(id);
+			
+	}
+	
 }

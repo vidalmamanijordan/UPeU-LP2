@@ -110,4 +110,21 @@ public class CursoDAOJdbcImpl implements CursoDAO {
 			DBConexion.exit();
 		}
 	}
+	
+	public void eliminar(String id){
+			
+			try {
+				Connection conn = DBConexion.getConexion();
+				
+				PreparedStatement ps = conn.prepareStatement("delete from curso where id=?");
+				
+				ps.setString(1, (id));
+				ps.executeUpdate();
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+			}finally{
+				DBConexion.exit();
+			}
+		}
 }

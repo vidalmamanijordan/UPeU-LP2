@@ -1,4 +1,4 @@
-package edu.upeu.ventas.web.alumno;
+package edu.upeu.ventas.web.curso;
 
 import java.io.IOException;
 import java.util.List;
@@ -7,30 +7,29 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import edu.upeu.ventas.service.CursoService;
+import edu.upeu.ventas.service.impl.CursoServiceImpl;
+import edu.upeu.ventas.web.form.CursoForm;
 
-import edu.upeu.ventas.service.AlumnoService;
-import edu.upeu.ventas.service.impl.AlumnoServiceImpl;
-import edu.upeu.ventas.web.form.AlumnoForm;
-
-public class AlumnoEliminarServlet extends HttpServlet {
+public class CursoEliminarServelt extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
-	private static final String VIEW_MAIN = "/pages/alumno/main.jsp";
+	private static final String VIEW_MAIN = "/pages/curso/main.jsp";
 	
-	private AlumnoService alumnoService = new AlumnoServiceImpl();
+	private CursoService cursoService = new CursoServiceImpl();
 	
-    public AlumnoEliminarServlet() {
+    public CursoEliminarServelt() {
         super();
-
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		System.out.print("lLEGOOOOOOOOOOOOOOOOOOOOOOOOOOOO");
-		alumnoService = new AlumnoServiceImpl();
-		alumnoService.eliminar(String.valueOf(request.getParameter("id")));
-		alumnoService = new AlumnoServiceImpl();
-		List<AlumnoForm> lista = alumnoService.listar();
+		cursoService = new CursoServiceImpl();
+		cursoService.eliminar(String.valueOf(request.getParameter("id")));
+		cursoService = new CursoServiceImpl();
+		
+		List<CursoForm> lista = cursoService.listar();
 
 		request.setAttribute("lp", lista);
 		request.getRequestDispatcher(VIEW_MAIN).forward(request, response);
@@ -38,7 +37,7 @@ public class AlumnoEliminarServlet extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		List<AlumnoForm> lista = alumnoService.listar();
+		List<CursoForm> lista = cursoService.listar();
 
 		request.setAttribute("lp", lista);
 		request.getRequestDispatcher(VIEW_MAIN).forward(request, response);

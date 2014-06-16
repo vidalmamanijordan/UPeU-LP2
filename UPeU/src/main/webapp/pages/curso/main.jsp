@@ -9,7 +9,7 @@
 			</tr>
 			<tr>
 				<th>#</th>
-				<th>Nombre</th>
+				<th>Curso</th>
 				<th># Horas</th>
 				<th># Creditos</th>
 				<th>Opc</th>
@@ -21,7 +21,10 @@
 					<td>${p.nroHoras}</td>
 					<td>${p.nroCreditos}</td>
 					<td><a href="#"
-						onclick="upeu.cargarUrl('cursos/editar?id=${p.id}')">[Edit]</a></td>
+						onclick="upeu.cargarUrl('cursos/editar?id=${p.id}')">[Edit]</a>
+						<a href="#"
+						onclick="upeu.cargarUrl('cursos/eliminar?id=${p.id}')">[Delete]</a>
+						</td>
 				</tr>
 			</c:forEach>
 		</table>

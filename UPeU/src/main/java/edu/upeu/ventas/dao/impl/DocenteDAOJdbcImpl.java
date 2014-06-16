@@ -104,5 +104,22 @@ public class DocenteDAOJdbcImpl implements DocenteDAO {
 			DBConexion.exit();
 		}
 	}
+	
+	public void eliminar(String id){
+		
+		try {
+			Connection conn = DBConexion.getConexion();
+			
+			PreparedStatement ps = conn.prepareStatement("delete from docente where id=?");
+			
+			ps.setString(1, (id));
+			ps.executeUpdate();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally{
+			DBConexion.exit();
+		}
+	}
 
 }

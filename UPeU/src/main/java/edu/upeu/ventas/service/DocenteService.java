@@ -11,5 +11,7 @@ public interface DocenteService {
 	List<DocenteForm> listar();
 
 	DocenteForm getDocentePorId(String id);
+	
+	void eliminar(String id);
 
 }

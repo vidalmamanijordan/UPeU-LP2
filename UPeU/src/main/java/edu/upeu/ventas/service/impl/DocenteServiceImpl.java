@@ -62,4 +62,11 @@ public class DocenteServiceImpl implements DocenteService{
 
 		return df;
 	}
+	
+	public void eliminar(String id){
+		
+		//Alumno alumno=alumnoDAO.getAlumnoPorId(id);
+		docenteDAO.eliminar(id);
+		
+	}
 }
