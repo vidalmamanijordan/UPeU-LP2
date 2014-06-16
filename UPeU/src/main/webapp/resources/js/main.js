@@ -5,6 +5,7 @@ var upeu = (function($) {
 			var xhr = $.get(url);
 			xhr.done(function(data) {
 				$("#contenido").html(data);
+				
 			});
 		},
 		

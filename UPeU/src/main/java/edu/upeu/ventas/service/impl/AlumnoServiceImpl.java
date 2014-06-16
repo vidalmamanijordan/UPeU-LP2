@@ -70,7 +70,7 @@ public class AlumnoServiceImpl implements AlumnoService {
 	
 	public void eliminar(String id){
 		
-		Alumno alumno=alumnoDAO.getAlumnoPorId(id);
+		//Alumno alumno=alumnoDAO.getAlumnoPorId(id);
 		alumnoDAO.eliminar(id);
 		
 	}

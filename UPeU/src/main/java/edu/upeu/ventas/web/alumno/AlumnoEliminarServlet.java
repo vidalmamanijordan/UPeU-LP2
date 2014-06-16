@@ -26,6 +26,10 @@ public class AlumnoEliminarServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		System.out.print("lLEGOOOOOOOOOOOOOOOOOOOOOOOOOOOO");
+		alumnoService = new AlumnoServiceImpl();
+		alumnoService.eliminar(String.valueOf(request.getParameter("id")));
+		alumnoService = new AlumnoServiceImpl();
 		List<AlumnoForm> lista = alumnoService.listar();
 
 		request.setAttribute("lp", lista);
@@ -34,7 +38,10 @@ public class AlumnoEliminarServlet extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		List<AlumnoForm> lista = alumnoService.listar();
 
+		request.setAttribute("lp", lista);
+		request.getRequestDispatcher(VIEW_MAIN).forward(request, response);
 	}
 
 }

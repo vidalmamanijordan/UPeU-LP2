@@ -122,6 +122,6 @@
 	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>AlumnoEliminarServlet</servlet-name>
-		<url-pattern>/AlumnoEliminarServlet</url-pattern>
+		<url-pattern>/alumnos/eliminar</url-pattern>
 	</servlet-mapping>
 </web-app>

@@ -21,7 +21,10 @@
 					<td>${p.apeMat}</td>
 					<td>${p.nombre}</td>
 					<td><a href="#"
-						onclick="upeu.cargarUrl('alumnos/editar?id=${p.id}')">[Edit]</a></td>
+						onclick="upeu.cargarUrl('alumnos/editar?id=${p.id}')">[Edit]</a>
+						<a href="#"
+						onclick="upeu.cargarUrl('alumnos/eliminar?id=${p.id}')">[Delete]</a>
+						</td>
 				</tr>
 			</c:forEach>
 		</table>

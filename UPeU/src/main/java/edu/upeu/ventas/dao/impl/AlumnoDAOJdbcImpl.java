@@ -114,7 +114,7 @@ public class AlumnoDAOJdbcImpl implements AlumnoDAO {
 		try {
 			Connection conn = DBConexion.getConexion();
 			
-			PreparedStatement ps = conn.prepareStatement("delete alumno where id=?");
+			PreparedStatement ps = conn.prepareStatement("delete from alumno where id=?");
 			
 			ps.setString(1, (id));
 			ps.executeUpdate();
