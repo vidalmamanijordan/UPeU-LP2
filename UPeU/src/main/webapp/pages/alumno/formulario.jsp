@@ -1,4 +1,5 @@
 <%@include file="/common/taglibs.jsp"%>
+
 <c:choose>
 	<c:when test="${not empty alumno.id}">
 		<c:url value="alumnos/editar" var="urlSubmit">
@@ -9,6 +10,7 @@
 		</c:url>
 	</c:otherwise>
 </c:choose>
+
 <form action="${urlSubmit}" method="POST" id="formulario">
 	<h1>Registro de Alumno</h1>
 	<p>
@@ -31,6 +33,7 @@
 		</c:if>
 	</p>
 </form>
+
 <script>
 	upeu.enviarFormulario({
 		id : 'formulario',

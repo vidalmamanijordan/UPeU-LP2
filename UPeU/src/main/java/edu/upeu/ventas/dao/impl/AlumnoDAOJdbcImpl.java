@@ -6,7 +6,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-
 import edu.upeu.ventas.dao.AlumnoDAO;
 import edu.upeu.ventas.dominio.Alumno;
 import edu.upeu.ventas.util.DBConexion;
@@ -106,6 +105,23 @@ public class AlumnoDAOJdbcImpl implements AlumnoDAO {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
+			DBConexion.exit();
+		}
+	}
+	
+	public void eliminar(String id){
+		
+		try {
+			Connection conn = DBConexion.getConexion();
+			
+			PreparedStatement ps = conn.prepareStatement("delete alumno where id=?");
+			
+			ps.setString(1, (id));
+			ps.executeUpdate();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally{
 			DBConexion.exit();
 		}
 	}

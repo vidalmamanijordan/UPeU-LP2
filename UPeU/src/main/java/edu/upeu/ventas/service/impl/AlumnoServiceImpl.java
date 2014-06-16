@@ -36,7 +36,9 @@ public class AlumnoServiceImpl implements AlumnoService {
 	}
 
 	public void guardar(AlumnoForm a) {
+		
 		Alumno alumno = new Alumno();
+		
 		alumno.setApePat(a.getApePat());
 		alumno.setApeMat(a.getApeMat());
 		alumno.setNombre(a.getNombre());
@@ -51,7 +53,9 @@ public class AlumnoServiceImpl implements AlumnoService {
 	}
 
 	public AlumnoForm getAlumnoPorId(String id) {
+		
 		AlumnoForm a = new AlumnoForm();
+		
 		Alumno alumno = alumnoDAO.getAlumnoPorId(id);
 
 		if (alumno != null) {
@@ -62,6 +66,13 @@ public class AlumnoServiceImpl implements AlumnoService {
 		}
 
 		return a;
+	}
+	
+	public void eliminar(String id){
+		
+		Alumno alumno=alumnoDAO.getAlumnoPorId(id);
+		alumnoDAO.eliminar(id);
+		
 	}
 
 }

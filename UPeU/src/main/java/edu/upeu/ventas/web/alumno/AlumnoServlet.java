@@ -22,16 +22,15 @@ public class AlumnoServlet extends HttpServlet {
 		super();
 	}
 
-	protected void doGet(HttpServletRequest request,
-			HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
+		
 		List<AlumnoForm> lista = alumnoService.listar();
 
 		request.setAttribute("lp", lista);
 		request.getRequestDispatcher(VIEW_MAIN).forward(request, response);
 	}
 
-	protected void doPost(HttpServletRequest request,
-			HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
 
 	}
 

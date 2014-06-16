@@ -16,6 +16,7 @@ var upeu = (function($) {
 			$("#" + parametros.id).ajaxForm(opciones);
 
 		},
+		
 	};
 
 })(jQuery);

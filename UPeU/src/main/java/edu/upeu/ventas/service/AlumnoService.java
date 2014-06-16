@@ -11,4 +11,6 @@ public interface AlumnoService {
 	void guardar(AlumnoForm p);
 
 	AlumnoForm getAlumnoPorId(String id);
+	
+	void eliminar(String id);
 }

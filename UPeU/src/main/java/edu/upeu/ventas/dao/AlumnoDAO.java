@@ -13,5 +13,7 @@ public interface AlumnoDAO {
 	Alumno getAlumnoPorId(String id);
 
 	void actualizar(Alumno alumno);
+	
+	void eliminar(String id);
 
 }

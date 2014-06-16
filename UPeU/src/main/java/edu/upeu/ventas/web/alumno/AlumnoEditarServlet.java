@@ -14,6 +14,7 @@ import edu.upeu.ventas.web.form.AlumnoForm;
 
 public class AlumnoEditarServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	
 	private static final String VIEW_MAIN = "/pages/alumno/main.jsp";
 	private static final String VIEW_FORMULARIO = "/pages/alumno/formulario.jsp";
 	
@@ -23,18 +24,18 @@ public class AlumnoEditarServlet extends HttpServlet {
 		super();
 	}
 
-	protected void doGet(HttpServletRequest request,
-			HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
+		
 		String id = request.getParameter("id");
+		
 		AlumnoForm alumno = alumnoService.getAlumnoPorId(id);
+		
 		request.setAttribute("alumno", alumno);
-		request.getRequestDispatcher(VIEW_FORMULARIO)
-				.forward(request, response);
+		request.getRequestDispatcher(VIEW_FORMULARIO).forward(request, response);
 
 	}
 
-	protected void doPost(HttpServletRequest request,
-			HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
 
 		String id = request.getParameter("id");
 		String nombre = request.getParameter("nombre");
@@ -42,6 +43,7 @@ public class AlumnoEditarServlet extends HttpServlet {
 		String materno = request.getParameter("materno");
 
 		AlumnoForm alumnoForm = new AlumnoForm();
+		
 		alumnoForm.setId(id);
 		alumnoForm.setNombre(nombre);
 		alumnoForm.setApePat(paterno);
